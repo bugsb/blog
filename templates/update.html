@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{%block head %}
+
+{% endblock %}
+
+{%block body %}
+
+<!-- <h2>Create New Post</h2>
+    <form action="/posts/update/{{post.id}}" method="POST">
+    Title: <input type="text" name="title" placeholder=" title " id="title" value="{{post.title}}">
+   
+    Post: <input type="text" name="content" placeholder=" content "id="content" value="{{post.content}}">
+   
+    <input type="submit"  value="Submit">
+ -->
+<h2>Edit Your Post Here</h2>
+<form action="/posts" method="POST">
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="title" class="sr-only">Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Your Title Here" value="{{post.title}}">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="content">Write your post here</label>
+        <textarea class="form-control" id="content" rows="3" name="content">{{post.content}}</textarea>
+    </div>
+    </br>
+    <input type="submit" value="Save">
+</form>
+</form>
+
+{%endblock %}

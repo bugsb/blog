@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{%block head %}
+
+<title>Posts</title>
+{% endblock %}
+
+{%block body %}
+<div style=" display: flex; align-items: center;  justify-content: center; padding-top:5px;">
+    <a button type="button" class="btn btn-success" href="/posts/new">+ Create New</button></a>
+</div>
+</hr>
+<h3> All Posts </h3>
+{% for post in posts %}
+<hr>
+<h2>{{ post.title}}</h2>
+<p style="white-space: pre-wrap;">{{ post.content }}</p>
+<small>By:{{ post.author }}</small>
+
+<a class="btn btn-primary" href="/posts/update/{{post.id}}">Update</a>
+<a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+</hr>
+{% endfor %}
+
+{%endblock %}
